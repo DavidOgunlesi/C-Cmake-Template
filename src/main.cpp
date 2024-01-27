@@ -1,28 +1,25 @@
 ﻿#include <iostream>
 #include "raylib.h"
-#include "core/ecs.h"
-
-void CreateEntities()
-{
-	unsigned int components[] = {sizeof(int), sizeof(float)};
-	ECS::Archetype* archetype = new ECS::Archetype(components, 2);
-}
+#include "core.ecs.h"
 
 int main()
 {
+	InitWindow(800, 600, "My window");
+	SetTargetFPS(60);
 
-	CreateEntities();
+	while (!WindowShouldClose())
+	{
+		CreateEntities();
 
-	// InitWindow(800, 600, "My window");
-	// SetTargetFPS(60);
+		ClearBackground(BLACK);
+		EndDrawing();
+	}
 
-	// while (!WindowShouldClose())
-	// {
-
-	// 	ClearBackground(BLACK);
-	// 	EndDrawing();
-	// }
-
-	// CloseWindow();
+	CloseWindow();
 	return 0; 
+}
+
+void CreateEntities()
+{
+	ECS::Archetype archetype = ECS::Archetype([sizeof(ECS::TransformComponent)]);
 }

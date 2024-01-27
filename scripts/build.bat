@@ -2,5 +2,4 @@
 set scriptpath=%~dp0
 cmake -B %scriptpath%\..\build
 cmake --build %scriptpath%\..\build
-
-if %1 == -x exit 0
+exit 0
