@@ -49,7 +49,8 @@ This script assumes that the project has been built successfully. It will execut
 
 To clean the build files and executable, run the `scripts/clean.bat` script:
 
-```cpp clean
+```
+cpp clean
 ```
 
 This script will remove the `build` directory and any generated files.
